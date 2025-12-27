@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="weather-body weather-dark">
+    <div class="weather-container">
+        <div class="weather-header">
+            <h1 class="weather-title">Weather App</h1>
+            <button class="weather-theme-toggle" id="weatherThemeToggle" aria-label="Toggle theme">
+                <i class="bi bi-moon-fill" id="weatherThemeIcon"></i>
+            </button>
+        </div>
+        
+        <div class="weather-search-container">
+            <div class="weather-search-wrapper">
+                <i class="bi bi-search weather-search-icon"></i>
+                <input 
+                    type="text" 
+                    class="weather-search-input" 
+                    id="weatherSearchInput" 
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                >
+                <button class="weather-search-btn" id="weatherSearchBtn">
+                    <i class="bi bi-search"></i>
+                    <span>Search</span>
+                </button>
+            </div>
+            <div class="weather-suggestions" id="weatherSuggestions"></div>
+        </div>
+        
+        <div class="weather-loading" id="weatherLoading" style="display: none;">
+            <div class="weather-spinner"></div>
+            <p class="weather-loading-text">Loading...</p>
+        </div>
+        
+        <div class="weather-error" id="weatherError" style="display: none;">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <p class="weather-error-message" id="weatherErrorMessage"></p>
+        </div>
+        
+        <div class="weather-results" id="weatherResults" style="display: none;">
+            <div class="weather-grid-layout">
+                <div class="weather-main-card weather-city-card">
+                    <div class="weather-city-info">
+                        <h2 class="weather-city-name" id="weatherCityName"></h2>
+                        <p class="weather-country" id="weatherCountry"></p>
+                        <p class="weather-date" id="weatherDate"></p>
+                    </div>
+                </div>
+                
+                <div class="weather-main-card weather-temp-card">
+                    <div class="weather-temp-section">
+                        <div class="weather-icon-wrapper">
+                            <img class="weather-icon" id="weatherIcon" src="" alt="Weather icon">
+                        </div>
+                        <div class="weather-temp-main">
+                            <span class="weather-temp" id="weatherTemp"></span>
+                            <span class="weather-temp-unit">°C</span>
+                        </div>
+                        <p class="weather-description" id="weatherDescription"></p>
+                    </div>
+                </div>
+                
+                <div class="weather-detail-item weather-detail-card">
+                    <i class="bi bi-thermometer-half"></i>
+                    <div class="weather-detail-content">
+                        <span class="weather-detail-label">Feels Like</span>
+                        <span class="weather-detail-value" id="weatherFeelsLike"></span>
+                    </div>
+                </div>
+                
+                <div class="weather-detail-item weather-detail-card">
+                    <i class="bi bi-droplet"></i>
+                    <div class="weather-detail-content">
+                        <span class="weather-detail-label">Humidity</span>
+                        <span class="weather-detail-value" id="weatherHumidity"></span>
+                    </div>
+                </div>
+                
+                <div class="weather-detail-item weather-detail-card">
+                    <i class="bi bi-wind"></i>
+                    <div class="weather-detail-content">
+                        <span class="weather-detail-label">Wind Speed</span>
+                        <span class="weather-detail-value" id="weatherWindSpeed"></span>
+                    </div>
+                </div>
+                
+                <div class="weather-detail-item weather-detail-card">
+                    <i class="bi bi-eye"></i>
+                    <div class="weather-detail-content">
+                        <span class="weather-detail-label">Visibility</span>
+                        <span class="weather-detail-value" id="weatherVisibility"></span>
+                    </div>
+                </div>
+                
+                <div class="weather-detail-item weather-detail-card">
+                    <i class="bi bi-arrow-down"></i>
+                    <div class="weather-detail-content">
+                        <span class="weather-detail-label">Min Temp</span>
+                        <span class="weather-detail-value" id="weatherMinTemp"></span>
+                    </div>
+                </div>
+                
+                <div class="weather-detail-item weather-detail-card">
+                    <i class="bi bi-arrow-up"></i>
+                    <div class="weather-detail-content">
+                        <span class="weather-detail-label">Max Temp</span>
+                        <span class="weather-detail-value" id="weatherMaxTemp"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="weather-footer">
+            <p class="weather-credits">Weather data provided by OpenWeatherMap API</p>
+        </div>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
